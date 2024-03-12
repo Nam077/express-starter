@@ -13,7 +13,7 @@ class TestService {
      * @returns {string} The test message.
      */
     async getMessage() {
-        return await this.categoryRepository.find();
+        res.render('test', { title: 'Test Page', message: 'Hello, this is a test page!' });
     }
 }
 

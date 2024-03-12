@@ -21,7 +21,7 @@ class TestController {
      * @param {Response} res The response object.
      */
     async get(req, res) {
-        res.json(await this.testService.getMessage());
+        res.render('test', { title: 'Test Page', message: 'Hello, this is a test page!' });
     }
 }
 
