@@ -1,1 +1,3 @@
-// TODO: Implement
+import AppDataSource from './datasource';
+
+export { AppDataSource };

@@ -1,5 +1,3 @@
 import TestService from './test.service';
-
-export  {
-    TestService,
-};
+import CategoryService from './category.service';
+export { TestService, CategoryService };

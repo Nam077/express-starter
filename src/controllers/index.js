@@ -1,3 +1,3 @@
 import TestController from './test.controller';
-
-export { TestController };
+import CategoryController from './category.controller';
+export { TestController, CategoryController };

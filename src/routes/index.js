@@ -1,3 +1,3 @@
 import TestRoute from './test.route';
-
-export { TestRoute };
+import CategoryRoute from './category.route';
+export { TestRoute, CategoryRoute };

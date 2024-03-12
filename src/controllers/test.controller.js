@@ -20,9 +20,8 @@ class TestController {
      * @param {Request} req The request object.
      * @param {Response} res The response object.
      */
-    get(req, res) {
-        const message = this.testService.getMessage();
-        res.send(message);
+    async get(req, res) {
+        res.json(await this.testService.getMessage());
     }
 }
 
