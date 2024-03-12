@@ -8,6 +8,12 @@ const hbs = create({
     partialsDir: path.join(__dirname, 'views/partials'),
 });
 class Server {
+    /**
+     * Constructor for initializing the app and setting up middleware and routes.
+     *
+     * @param {Object} container - The Awilix container for dependency injection.
+     * @param {Array} routes - The array of route classes to set up.
+     */
     constructor(container, routes) {
         this.app = express();
         this.container = container;

@@ -23,11 +23,25 @@ class CategoryController {
         res.json(categories);
     }
 
+    /**
+     * Retrieves a category by its ID.
+     *
+     * @param {Object} req - the request object
+     * @param {Object} res - the response object
+     * @return {Promise} - a Promise that resolves to the retrieved category
+     */
     async getById(req, res) {
         const category = await this.categoryService.getById(req.params.id);
         res.json(category);
     }
 
+    /**
+     * Asynchronous function to create a category using the request body and respond with the created category or an error message.
+     *
+     * @param {Object} req - The request object
+     * @param {Object} res - The response object
+     * @return {Promise} A promise that resolves with the created category or rejects with an error message
+     */
     async create(req, res) {
         try {
             const category = await this.categoryService.create(req.body);
@@ -37,11 +51,25 @@ class CategoryController {
         }
     }
 
+    /**
+     * Update the category using the provided request and response.
+     *
+     * @param {Object} req - the request object
+     * @param {Object} res - the response object
+     * @return {Promise} a Promise that resolves to the updated category
+     */
     async update(req, res) {
         const category = await this.categoryService.update(req.params.id, req.body);
         res.json(category);
     }
 
+    /**
+     * Delete a category.
+     *
+     * @param {Object} req - the request object
+     * @param {Object} res - the response object
+     * @return {Promise} the deleted category
+     */
     async delete(req, res) {
         const category = await this.categoryService.delete(req.params.id);
         res.json(category);
