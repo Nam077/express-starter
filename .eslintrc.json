@@ -1,0 +1,33 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:prettier/recommended",
+        "plugin:node/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:security/recommended"
+    ],
+    "overrides": [
+        {
+            "files": ["src/**/*.js"],
+            "excludedFiles": "*.test.js",
+            "rules": {
+                "strict": ["error", "global"]
+            }
+        }
+    ],
+    "plugins": ["prettier"],
+    "rules": {
+        "prettier/prettier": "error",
+        "no-unused-vars": "warn",
+        "no-console": "off"
+    }
+}
