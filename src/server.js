@@ -20,7 +20,7 @@ class Server {
         this.app.engine('.hbs', engine({ extname: '.hbs' }));
         this.app.set('view engine', '.hbs');
         this.app.set('views', path.join(__dirname, 'views')); // Thư mục chứa các file view
-
+        this.app.use(express.static(path.join(__dirname, 'public')));
         // Set up routes
         routes.forEach((routeClass) => {
             const route = this.container.resolve(routeClass);

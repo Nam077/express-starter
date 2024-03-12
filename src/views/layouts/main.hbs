@@ -4,6 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
+    <style> 
+      
+    /* Thiết lập chiều cao của body và html là 100% */
+        html, body {
+            height: 100%;
+            margin: 0; /* Reset margin để không có khoảng trắng xung quanh */
+        }
+
+        /* Thiết lập layout của trang sử dụng flexbox với flex-direction là column */
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Phần nội dung chính của trang mở rộng để chiếm hết không gian trống */
+        .main-content {
+            flex-grow: 1;
+        }
+
+        /* Footer luôn nằm ở dưới cùng của trang */
+        .footer {
+            margin-top: auto; /* Đảm bảo footer nằm ở dưới cùng bằng cách sử dụng auto margin-top */
+            background-color: #f8f9fa; /* Màu nền cho footer (thay đổi tùy ý) */
+            padding: 20px; /* Padding cho footer (thay đổi tùy ý) */
+            text-align: center; /* Căn giữa nội dung của footer (thay đổi tùy ý) */
+        }
+
+    </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Các file CSS tùy chỉnh khác có thể được thêm vào đây -->
 </head>
@@ -11,8 +39,13 @@
     <!-- Header partial -->
     {{> header }}
 
+
+   <div class="container" style="height: 10000px">
+        <div class="main-content">
+            {{{ body }}}
+        </div>
+    </div>
     <!-- Nội dung trang sẽ được đổ vào đây -->
-    {{{ body }}}
 
     <!-- Footer partial -->
     {{> footer }}
