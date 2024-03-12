@@ -1,14 +1,20 @@
-// api/TestRoute.js
+import { TestController } from '../controllers';
 import { Router } from 'express';
+import { loggerMiddleware } from '../middleware';
+
 class TestRoute {
+    /**
+     * Creates an instance of TestRoute.
+     * @param {{ testController: TestController, loggerMiddleware: any }} services An object containing services.
+     */
     constructor({ testController }) {
+        this.router = Router();
+        this.router.use(loggerMiddleware);
         this.testController = testController;
     }
 
     setupRoutes() {
-        const router = Router();
-        router.get('/test', (req, res) => this.testController.get(req, res));
-        return router;
+        return this.router.get('/test', this.testController.get.bind(this.testController));
     }
 }
 

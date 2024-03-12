@@ -1,7 +1,3 @@
-import TestController from './TestController';
-import { TestService } from '../services';
+import TestController from './test.controller';
 
-const testService = new TestService();
-const testController = new TestController(testService);
-
-export { testController };
+export { TestController };

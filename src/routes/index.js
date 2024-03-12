@@ -1,4 +1,3 @@
-import testRoute from './test.route';
-module.exports = {
-    TestRoute,
-};
+import TestRoute from './test.route';
+
+export { TestRoute };

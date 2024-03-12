@@ -1,5 +1,5 @@
 import TestService from './test.service';
 
-export default {
+export  {
     TestService,
 };

@@ -1,10 +1,11 @@
-import { createContainer, asClass } from 'awilix';
+import { createContainer, asClass, asFunction } from 'awilix';
 
 // Import classes
 import Server from './server';
-import TestService from './services/test.service';
+import { TestService } from './services/index';
 import TestController from './controllers/test.controller';
 import TestRoute from './routes/test.route';
+import { loggerMiddleware } from './middleware';
 
 // Tạo container
 const container = createContainer();
@@ -15,6 +16,7 @@ container.register({
     testService: asClass(TestService).singleton(),
     testController: asClass(TestController).singleton(),
     testRoute: asClass(TestRoute).singleton(),
+    loggerMiddleware: asFunction(loggerMiddleware).singleton(),
 });
 
 export default container;
