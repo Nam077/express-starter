@@ -1,9 +1,10 @@
 import { DataSource } from 'typeorm';
 import Category from '../models/Category';
+import 'dotenv/config';
 
 const AppDataSource = new DataSource({
     type: 'better-sqlite3',
-    database: 'db.sqlite',
+    database: process.env.DATABASE_FILE,
     synchronize: true,
     logging: false,
     entities: [Category],

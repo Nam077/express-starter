@@ -6,8 +6,7 @@ import { TestService, CategoryService } from './services/index';
 import { TestController, CategoryController } from './controllers';
 import { TestRoute, CategoryRoute } from './routes';
 import { loggerMiddleware } from './middleware';
-import { AppDataSource } from './utils';
-
+import AppDataSource from './database/datasource';
 // Tạo container
 const container = createContainer();
 

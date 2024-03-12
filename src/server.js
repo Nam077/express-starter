@@ -1,8 +1,7 @@
 import express from 'express';
-import { asValue } from 'awilix';
-import { scopePerRequest } from 'awilix-express';
 import { create, engine } from 'express-handlebars'; // Import Express Handlebars
 import path from 'path'; // Import path module
+
 const hbs = create({
     defaultLayout: 'main',
     layoutsDir: path.join(__dirname, 'views/layouts'),
@@ -31,7 +30,7 @@ class Server {
     // Method to start the server
     listen(port) {
         this.app.listen(port, () => {
-            console.log(`Server running on port ${port}`);
+            console.log(`Server running at http://localhost:${port}`);
         });
     }
 }
